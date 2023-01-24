@@ -14,8 +14,14 @@ spec:
     spec:
       containers:
       - name: story
-        image: amvillalobos/kub-data-demo:1
+        image: amvillalobos/kub-data-demo:2
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        volumeMounts:
+          - mountPath: /app/story
+            name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
