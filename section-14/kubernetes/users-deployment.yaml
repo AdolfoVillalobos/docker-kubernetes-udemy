@@ -17,13 +17,7 @@ spec:
         image: amvillalobos/kub-demo-users:latest
         env:
           - name: AUTH_ADDRESS
-            value: localhost
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-      - name: auth
-        image: amvillalobos/kub-demo-auth:latest
+            value: "auth-service.default"
         resources:
           limits:
             memory: "128Mi"
